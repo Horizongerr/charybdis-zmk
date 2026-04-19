@@ -169,7 +169,7 @@
             key-positions = <39 40>;
             timeout-ms = <40>;
         };
-        
+
         combo_smart_mouse {
             bindings = <&tog 2>;
             key-positions = <15 16>;
@@ -429,11 +429,11 @@
 
         layer_9 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans           &trans            &trans           &trans                  &trans             &trans            &trans                   &trans           &trans             &trans                &trans
+&trans  &kp EXCLAMATION  &kp AT_SIGN       &kp POUND        &kp DOLLAR              &kp PERCENT        &kp LCTRL         &kp AMPERSAND            &kp STAR         &kp UNDERSCORE     &kp EQUAL             &trans
+&trans  &kp MINUS        &kp LEFT_BRACKET  &kp LEFT_BRACE   &kp LEFT_PARENTHESIS    &kp LESS_THAN      &kp GREATER_THAN  &kp RIGHT_PARENTHESIS    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp PLUS              &trans
+&trans  &kp CAPSLOCK     &trans            &kp LC(LS(TAB))  &kp LC(LG(LEFT_ARROW))  &caps_word         &trans            &kp LG(LC(RIGHT_ARROW))  &kp LC(TAB)      &trans             &kp NON_US_BACKSLASH  &trans
+&trans  &trans           &trans            &trans           &trans                                                       &trans                   &trans           &trans             &trans                &trans
             >;
         };
     };

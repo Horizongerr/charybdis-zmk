@@ -171,7 +171,7 @@
         };
 
         combo_smart_mouse {
-            bindings = <&tog 2>;
+            bindings = <&to 2>;
             key-positions = <15 16>;
             timeout-ms = <50>;
             layers = <0>;
@@ -334,7 +334,7 @@
         };
 
         backtoreality {
-            bindings = <&tog 0>;
+            bindings = <&to 0>;
             key-positions = <15 16>;
             timeout-ms = <50>;
             layers = <2>;

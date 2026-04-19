@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: urob
       url-base: https://github.com/urob
-    - name: nickcoutsos
-      url-base: https://github.com/nickcoutsos
+    - name: dhruvinsh
+      url-base: https://github.com/dhruvinsh
   projects:
     - name: zmk
       remote: zmk
@@ -20,7 +20,7 @@ manifest:
       remote: urob
       revision: main
     - name: zmk-tri-state
-      remote: nickcoutsos
+      remote: dhruvinsh
       revision: main
   self:
     path: config

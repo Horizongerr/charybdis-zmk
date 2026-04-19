@@ -169,12 +169,12 @@
             key-positions = <39 40>;
             timeout-ms = <40>;
         };
-
+        
         combo_smart_mouse {
-            bindings = <&to 2>;
+            bindings = <&tog 2>;
             key-positions = <15 16>;
             timeout-ms = <50>;
-            layers = <0>;
+            layers = <0 2>;
         };
 
         // ── Urob horizontais direita ──────────────────────────────
@@ -331,13 +331,6 @@
             key-positions = <33 45>;
             timeout-ms = <50>;
             require-prior-idle-ms = <125>;
-        };
-
-        backtoreality {
-            bindings = <&to 0>;
-            key-positions = <15 16>;
-            timeout-ms = <50>;
-            layers = <2>;
         };
     };
 

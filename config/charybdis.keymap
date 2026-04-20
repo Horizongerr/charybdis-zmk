@@ -127,14 +127,22 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        // ── Magic Shift (urob style) ─────────────────────────────
-        // tap=sticky shift, shift+tap=caps word
-
+        // ── Magic Shift completo (urob style) ────────────────────────
+        // tap=sticky shift, shift+tap=key repeat, double tap=caps word
+        
+        shift_morph: shift_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SHIFT_MORPH";
+            #binding-cells = <0>;
+            bindings = <&sk LSHFT>, <&key_repeat>;
+            mods = <(MOD_LSFT)>;
+        };
+        
         magic_shift: magic_shift {
             compatible = "zmk,behavior-mod-morph";
             label = "MAGIC_SHIFT";
             #binding-cells = <0>;
-            bindings = <&sk LSHFT>, <&caps_word>;
+            bindings = <&shift_morph>, <&caps_word>;
             mods = <(MOD_LSFT)>;
         };
 

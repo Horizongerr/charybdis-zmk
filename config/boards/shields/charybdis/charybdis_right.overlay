@@ -8,8 +8,6 @@
 &matrix_transform0 {
 	col-offset = <6>;
 };
-
-
 &kscan0 {
 	col-gpios
 		= <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
@@ -20,8 +18,6 @@
 		, <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		;
 };
-
-
 &pinctrl {
     spi2_default: spi2_default {
 				group1 {
@@ -40,22 +36,31 @@
 				};
 		};
 };
+#define INPUT_EV_KEY 0x01
+#define INPUT_EV_REL 0x02
+#define INPUT_EV_ABS 0x03
+#define INPUT_EV_MSC 0x04
+#define INPUT_EV_VENDOR_START 0x30
+#define INPUT_EV_VENDOR_STOP 0x3e
+#define INPUT_REL_X 0x00
+#define INPUT_REL_Y 0x01
+#define INPUT_REL_WHEEL 0x08
+#define INPUT_REL_HWHEEL 0x06
+#define INPUT_REL_MISC 0x09
 
-#define INPUT_EV_KEY 0x01               /**< Key event */
-#define INPUT_EV_REL 0x02               /**< Relative coordinate event */
-#define INPUT_EV_ABS 0x03               /**< Absolute coordinate event */
-#define INPUT_EV_MSC 0x04               /**< Miscellaneous event */
-#define INPUT_EV_VENDOR_START 0x30      /**< Vendor specific event start */
-#define INPUT_EV_VENDOR_STOP 0x3e       /**< Vendor specific event stop */
-
-#define INPUT_REL_X 0x00                /**< Relative X coordinate */
-#define INPUT_REL_Y 0x01                /**< Relative Y coordinate */
-#define INPUT_REL_WHEEL 0x08            /**< Relative wheel coordinate */
-#define INPUT_REL_HWHEEL 0x06           /**< Relative horizontal wheel coordinate */
-#define INPUT_REL_MISC 0x09             /**< Relative misc coordinate */
+/ {
+    zip_xy_dead_zone: zip_xy_dead_zone {
+        compatible = "zmk,input-processor-transform";
+        #input-processor-cells = <1>;
+        type = <INPUT_EV_REL>;
+        x-codes = <INPUT_REL_X>;
+        y-codes = <INPUT_REL_Y>;
+        dead-zone = <2>;
+    };
+};
 
 nice_view_spi: &spi2 {
-	 status ="okay";
+	status = "okay";
     compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi2_default>;
     pinctrl-1 = <&spi2_sleep>;
@@ -63,7 +68,7 @@ nice_view_spi: &spi2 {
     cs-gpios = <&gpio0 20 GPIO_ACTIVE_LOW>;
 		trackball: trackball@0 {
 			status = "okay";
-			compatible ="pixart,pmw3610-alt";
+			compatible = "pixart,pmw3610-alt";
 			reg = <0>;
 			spi-max-frequency = <2000000>;
 			irq-gpios = <&pro_micro 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
@@ -73,10 +78,7 @@ nice_view_spi: &spi2 {
 			y-input-code = <INPUT_REL_Y>;
 	};
 };
-
 &pmw_split {
 	device = <&trackball>;
-
-// see https://zmk.dev/docs/keymaps/input-processors for more information
-	// input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>;
+    input-processors = <&zip_xy_dead_zone 0>;
 };

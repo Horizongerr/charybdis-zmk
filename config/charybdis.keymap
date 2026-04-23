@@ -511,11 +511,11 @@
 
         number {
             bindings = <
-&trans  &trans      &trans     &trans         &trans            &trans                       &trans         &trans             &trans         &trans            &trans                   &trans
-&trans  &kp ESCAPE  &kp PG_UP  &kp UP         &kp DOWN          &trans                       &kp PG_UP      &kp LC(BACKSPACE)  &arr_up_mm     &kp LC(DELETE)    &trans                   &trans
-&trans  &kp HOME    &kp LEFT   &kp DOWN       &kp RIGHT         &kp END                      &kp PAGE_DOWN  &arr_left_mm       &arr_down_mm   &arr_right_mm     &kp ENTER                &trans
-&trans  &kp ESCAPE  &kp PG_UP  &kp PAGE_DOWN  &kp LG(LC(LEFT))  &kp LC(LG(RIGHT_ARROW))      &kp INSERT     &kp TAB            &kp PAGE_DOWN  &kp LG(LC(LEFT))  &kp LC(LG(RIGHT_ARROW))  &trans
-&trans  &trans      &trans     &trans         &trans                                                        &trans             &trans         &trans            &trans                   &trans
+&trans  &trans       &trans                     &trans                    &trans                        &trans                       &trans     &trans  &trans  &trans     &trans     &trans
+&trans  &kp ESCAPE   &kp PG_UP                  &arr_up_mm                &kp PAGE_DOWN                 &trans                       &kp STAR   &kp N7  &kp N8  &kp N9     &kp MINUS  &trans
+&trans  &kp HOME     &arr_left_mm               &arr_down_mm              &arr_right_mm                 &kp END                      &kp SLASH  &kp N4  &kp N5  &kp N6     &kp PLUS   &trans
+&trans  &kp LC(HOME) &kp PG_UP                  &kp PAGE_DOWN             &kp LG(LC(LEFT))              &kp LC(LG(RIGHT_ARROW))      &kp EQUAL  &kp N1  &kp N2  &kp N3     &kp N0     &trans
+&trans  &trans       &trans                     &trans                    &trans                                                                &trans  &trans  &kp MINUS  &kp N0     &kp PERIOD
             >;
         };
 

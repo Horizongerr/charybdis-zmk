@@ -505,11 +505,11 @@
 
         number {
             bindings = <
-&trans  &trans       &trans                     &trans                    &trans                        &trans                       &trans  &trans       &trans                     &trans                    &trans                        &trans  
-&trans  &kp ESCAPE   &kp PG_UP                  &arr_up_mm                &kp PAGE_DOWN                 &trans                       &trans  &kp ESCAPE   &kp PG_UP                  &arr_up_mm                &kp PAGE_DOWN                 &trans    
-&trans  &kp HOME     &arr_left_mm               &arr_down_mm              &arr_right_mm                 &kp END                      &trans  &kp HOME     &arr_left_mm               &arr_down_mm              &arr_right_mm                 &kp END      
-&trans  &kp LC(HOME) &kp PG_UP                  &kp PAGE_DOWN             &kp LG(LC(LEFT))              &kp LC(LG(RIGHT_ARROW))      &trans  &kp LC(HOME) &kp PG_UP                  &kp PAGE_DOWN             &kp LG(LC(LEFT))              &kp LC(LG(RIGHT_ARROW))  
-&trans  &trans       &trans                     &trans                    &trans                                                                &trans  &trans  &kp MINUS  &kp N0     &kp PERIOD
+&trans  &trans       &trans                     &trans                    &trans                        &trans                       &trans       &trans                     &trans                    &trans                        &trans                   &trans
+&trans  &kp ESCAPE   &kp PG_UP                  &arr_up_mm                &kp PAGE_DOWN                 &trans                       &kp ESCAPE   &kp PG_UP                  &arr_up_mm                &kp PAGE_DOWN                 &trans                   &trans
+&trans  &kp HOME     &arr_left_mm               &arr_down_mm              &arr_right_mm                 &kp END                      &kp HOME     &arr_left_mm               &arr_down_mm              &arr_right_mm                 &kp END                  &trans
+&trans  &kp LC(HOME) &kp PG_UP                  &kp PAGE_DOWN             &kp LG(LC(LEFT))              &kp LC(LG(RIGHT_ARROW))      &kp LC(HOME) &kp PG_UP                  &kp PAGE_DOWN             &kp LG(LC(LEFT))              &kp LC(LG(RIGHT_ARROW))  &trans
+&trans  &trans       &trans                     &trans                    &trans                                                                  &trans                     &trans                    &trans                        &trans                   &trans
             >;
         };
 

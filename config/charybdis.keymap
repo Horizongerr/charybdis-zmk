@@ -497,7 +497,7 @@
 &kp TAB      &kp Q        &kp W            &kp E              &kp R         &kp T       &kp Y   &kp U         &kp I              &kp O            &kp P                &kp BSLH
 &kp ESCAPE   &hml LCMD A  &hml LEFT_ALT S  &hml LEFT_SHIFT D  &hml LCTRL F  &kp G       &kp H   &hmr LCTRL J  &hmr LEFT_SHIFT K  &hmr LEFT_ALT L  &hmr LCMD SEMICOLON  &kp APOS
 &kp LSHFT    &kp Z        &kp X            &kp C              &kp V         &kp B       &kp N   &kp M         &comma_semi        &dot_colon       &fslh_qmark          &kp RSHFT
-&lt NAV SPACE  &lt SYM TAB  &magic_shift   &kp LGUI           &num_word                         &trans        &trans             &kp RETURN       &lt FN BSPC          &kp SPACE
+&lt NAV SPACE  &lt SYM TAB  &magic_shift   &kp LGUI           &num_word NAV                     &trans        &trans             &kp RETURN       &lt FN BSPC          &kp SPACE
             >;
         };
 
@@ -507,8 +507,8 @@
             bindings = <
 &trans  &trans       &trans                     &trans                    &trans                        &trans                       &trans     &trans  &trans  &trans     &trans     &trans
 &trans  &kp ESCAPE   &kp PG_UP                  &arr_up_mm                &kp PAGE_DOWN                 &trans                       &kp STAR   &kp N7  &kp N8  &kp N9     &kp MINUS  &trans
-&trans  &kp HOME     &arr_left_mm               &arr_down PG_DN DOWN      &arr_right_mm                 &kp END                      &kp SLASH  &kp N4  &kp N5  &kp N6     &kp PLUS   &trans
-&trans  &kp LC(HOME) &kp PG_UP                  &arr_down_mm              &kp LG(LC(LEFT))              &kp LC(LG(RIGHT_ARROW))      &kp EQUAL  &kp N1  &kp N2  &kp N3     &kp N0     &trans
+&trans  &kp HOME     &arr_left_mm               &arr_down_mm              &arr_right_mm                 &kp END                      &kp SLASH  &kp N4  &kp N5  &kp N6     &kp PLUS   &trans
+&trans  &kp LC(HOME) &kp PG_UP                  &kp PAGE_DOWN             &kp LG(LC(LEFT))              &kp LC(LG(RIGHT_ARROW))      &kp EQUAL  &kp N1  &kp N2  &kp N3     &kp N0     &trans
 &trans  &trans       &trans                     &trans                    &trans                                                                &trans  &trans  &kp MINUS  &kp N0     &kp PERIOD
             >;
         };

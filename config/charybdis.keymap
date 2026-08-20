@@ -175,28 +175,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        // combo mod-morphs para parênteses/aspas (shift-linked)
-        cm_quote: cm_quote {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp SQT>, <&kp DQT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        cm_lpar: cm_lpar {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LPAR>, <&kp LT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        cm_rpar: cm_rpar {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp RPAR>, <&kp GT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         // ── Magic Shift completo (urob style) ────────────────────────
         // tap=sticky shift, shift+tap=key repeat, double tap=caps word
 
@@ -277,55 +255,15 @@
             require-prior-idle-ms = <125>;
         };
 
-        par {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <31 32>;
-            require-prior-idle-ms = <125>;
-        };
-
-        par2 {
-            bindings = <&kp LA(TAB)>;   // Alt+Tab (thumb shortcut for Navi layer)
-            key-positions = <27 28>;
-            require-prior-idle-ms = <125>;
-        };
-
         underscore {
             bindings = <&kp UNDER>;
             key-positions = <42 43>;
             require-prior-idle-ms = <125>;
         };
 
-        bra {
-            bindings = <&kp TAB>;   // remapped to TAB to match desired mapping
-            key-positions = <26 27>;
-            require-prior-idle-ms = <125>;
-        };
-
-        right {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <32 33>;
-            require-prior-idle-ms = <125>;
-        };
-
-        esc_combo {
-            bindings = <&kp ESC>;
-            key-positions = <14 15>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <125>;
-        };
-
-        // Insert / Enter physical remaps
-        kp_insert_combo {
-            bindings = <&kp INS>;
-            key-positions = <21 31>;
-            timeout-ms = <50>;
-            require-prior-idle-ms = <125>;
-        };
-
-        kp_enter_combo {
-            bindings = <&kp ENTER>;
-            key-positions = <31 34>;
-            timeout-ms = <50>;
+        equal {
+            bindings = <&kp EQUAL>;
+            key-positions = <40 41>;
             require-prior-idle-ms = <125>;
         };
 
@@ -346,21 +284,21 @@
         };
 
         combo_cut {
-            bindings = <&kp LS(DEL)>;   // Shift+Delete as Cut alternative
+            bindings = <&kp LC(X)>;
             key-positions = <38 40>;
             timeout-ms = <40>;
             require-prior-idle-ms = <125>;
         };
 
         combo_copy {
-            bindings = <&kp LC(INS)>;   // Ctrl+Insert as Copy alternative
+            bindings = <&kp LC(C)>;
             key-positions = <38 39>;
             timeout-ms = <40>;
             require-prior-idle-ms = <125>;
         };
 
         combo_paste {
-            bindings = <&kp LS(INS)>;   // Shift+Insert as Paste alternative
+            bindings = <&kp LC(V)>;
             key-positions = <39 40>;
             timeout-ms = <40>;
             require-prior-idle-ms = <125>;
@@ -388,26 +326,16 @@
             require-prior-idle-ms = <125>;
         };
 
-        // ── Smart Mouse E+R ──────────────────────────────────────
-
-        combo_smart_mouse {
-            bindings = <&tog MOUSE>;
-            key-positions = <15 16>;
-            timeout-ms = <50>;
-            layers = <BASE MOUSE>;
-            require-prior-idle-ms = <500>;
-        };
-
         // ── Urob horizontais direita ──────────────────────────────
 
-        combo_bspc_ui {
-            bindings = <&kp DEL>;   // remapped to DEL to match desired mapping
+        combo_del_ui {
+            bindings = <&kp DEL>;
             key-positions = <19 20>;
             timeout-ms = <40>;
             require-prior-idle-ms = <125>;
         };
 
-        combo_del_io {
+        combo_bspc_io {
             bindings = <&bs_del>;
             key-positions = <20 21>;
             timeout-ms = <40>;
@@ -676,11 +604,11 @@
 
         layer_9 {
             bindings = <
-&trans  &trans           &trans            &trans          &trans                  &trans           &trans       &trans                   &trans           &trans             &trans               [...] 
-&trans  &kp EXCLAMATION  &kp AT_SIGN       &kp POUND       &kp DOLLAR              &kp PERCENT      &kp LCTRL    &kp AMPERSAND            &kp STAR         &kp UNDERSCORE     &kp EQUAL            [...] 
-&trans  &kp MINUS        &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS    &kp LT           &kp GT       &kp RIGHT_PARENTHESIS    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp PLUS             [...] 
-&trans  &kp CAPSLOCK     &trans            &swapper_pwin   &kp LC(LG(LEFT_ARROW))  &caps_word       &snake_case  &kp LG(LC(RIGHT_ARROW))  &swapper_nwin    &magic_shift       &kp NON_US_BACKSLASH [...] 
-&trans  &trans           &trans            &trans          &trans                                                &trans                   &trans           &trans             &trans               [...] 
+&trans  &trans           &trans            &trans          &trans                  &trans           &trans       &trans                   &trans           &trans             &trans                &trans
+&trans  &kp EXCLAMATION  &kp AT_SIGN       &kp POUND       &kp DOLLAR              &kp PERCENT      &kp LCTRL    &kp AMPERSAND            &kp STAR         &kp UNDERSCORE     &kp EQUAL             &trans
+&trans  &kp MINUS        &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS    &kp LT           &kp GT       &kp RIGHT_PARENTHESIS    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp PLUS              &trans
+&trans  &kp CAPSLOCK     &trans            &swapper_pwin   &kp LC(LG(LEFT_ARROW))  &caps_word       &snake_case  &kp LG(LC(RIGHT_ARROW))  &swapper_nwin    &magic_shift       &kp NON_US_BACKSLASH  &trans
+&trans  &trans           &trans            &trans          &trans                                                &trans                   &trans           &trans             &trans                &trans
             >;
         };
     };

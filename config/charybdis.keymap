@@ -61,6 +61,14 @@
             flavor = "tap-preferred";
         };
 
+        cm_quote: cm_quote { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp SQT>, <&kp DQT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+
+        cm_lpar: cm_lpar { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LPAR>, <&kp LT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+
+        cm_rpar: cm_rpar { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp RPAR>, <&kp GT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+
+        bs_del: bs_del { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp BSPC>, <&kp DEL>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+                
         // ── Arrow cluster hold-taps (urob style) ─────────────────
         // tap=arrow, hold=home/end/pgup/pgdn
 
@@ -215,6 +223,7 @@
 
             ignored-key-positions = <19 20 21>;
         };
+
     };
 
     // ── Macros ───────────────────────────────────────────────────
@@ -246,33 +255,9 @@
             require-prior-idle-ms = <125>;
         };
 
-        par {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <31 32>;
-            require-prior-idle-ms = <125>;
-        };
-
-        par2 {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <27 28>;
-            require-prior-idle-ms = <125>;
-        };
-
         underscore {
             bindings = <&kp UNDER>;
             key-positions = <42 43>;
-            require-prior-idle-ms = <125>;
-        };
-
-        bra {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <26 27>;
-            require-prior-idle-ms = <125>;
-        };
-
-        right {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <32 33>;
             require-prior-idle-ms = <125>;
         };
 
@@ -319,27 +304,39 @@
             require-prior-idle-ms = <125>;
         };
 
-        // ── Smart Mouse E+R ──────────────────────────────────────
+        // quote / parentheses combos (shift-linked mod-morphs)
+        combo_quote {
+            bindings = <&cm_quote>;
+            key-positions = <31 33>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <125>;
+        };
 
-        combo_smart_mouse {
-            bindings = <&tog MOUSE>;
-            key-positions = <15 16>;
-            timeout-ms = <50>;
-            layers = <BASE MOUSE>;
-            require-prior-idle-ms = <500>;
+        combo_lpar {
+            bindings = <&cm_lpar>;
+            key-positions = <31 32>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <125>;
+        };
+
+        combo_rpar {
+            bindings = <&cm_rpar>;
+            key-positions = <32 33>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <125>;
         };
 
         // ── Urob horizontais direita ──────────────────────────────
 
-        combo_bspc_ui {
-            bindings = <&kp BSPC>;
+        combo_del_ui {
+            bindings = <&kp DEL>;
             key-positions = <19 20>;
             timeout-ms = <40>;
             require-prior-idle-ms = <125>;
         };
 
-        combo_del_io {
-            bindings = <&kp DEL>;
+        combo_bspc_io {
+            bindings = <&bs_del>;
             key-positions = <20 21>;
             timeout-ms = <40>;
             require-prior-idle-ms = <125>;

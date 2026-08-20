@@ -471,14 +471,14 @@
         };
 
         combo_under_v {
-            bindings = <&kp UNDER>;
+            bindings = <&snake_case>;
             key-positions = <30 42>;
             timeout-ms = <50>;
             require-prior-idle-ms = <125>;
         };
 
         combo_minus_v {
-            bindings = <&kp MINUS>;
+            bindings = <&kebab_case>;
             key-positions = <31 43>;
             timeout-ms = <50>;
             require-prior-idle-ms = <125>;
@@ -496,6 +496,16 @@
             key-positions = <33 45>;
             timeout-ms = <50>;
             require-prior-idle-ms = <125>;
+        };
+
+        swapper_pwin {
+            bindings = <&swapper_pwin>;
+            key-positions = <26 27>;
+        };
+
+        swapper_nwin {
+            bindings = <&swapper_nwin>;
+            key-positions = <27 28>;
         };
     };
 

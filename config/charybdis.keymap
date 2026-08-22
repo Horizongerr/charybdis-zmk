@@ -292,37 +292,9 @@
 
         // ── Urob horizontais esquerda ─────────────────────────────
 
-        combo_tab {
-            bindings = <&kp TAB>;
-            key-positions = <14 15>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <125>;
-        };
-
         combo_caps_word {
             bindings = <&kp CAPSLOCK>;
             key-positions = <28 29>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <125>;
-        };
-
-        combo_cut {
-            bindings = <&kp LC(X)>;
-            key-positions = <38 40>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <125>;
-        };
-
-        combo_copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <38 39>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <125>;
-        };
-
-        combo_paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <39 40>;
             timeout-ms = <40>;
             require-prior-idle-ms = <125>;
         };
@@ -351,20 +323,6 @@
         };
 
         // ── Urob horizontais direita ──────────────────────────────
-
-        combo_del_ui {
-            bindings = <&kp DEL>;
-            key-positions = <19 20>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <125>;
-        };
-
-        combo_bspc_io {
-            bindings = <&bs_del>;
-            key-positions = <20 21>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <125>;
-        };
 
         combo_rbrc {
             bindings = <&kp RBRC>;
@@ -497,16 +455,6 @@
             timeout-ms = <50>;
             require-prior-idle-ms = <125>;
         };
-
-        swapper_pwin {
-            bindings = <&swapper_pwin>;
-            key-positions = <26 27>;
-        };
-
-        swapper_nwin {
-            bindings = <&swapper_nwin>;
-            key-positions = <27 28>;
-        };
     };
 
     keymap {
@@ -528,11 +476,11 @@
 
         number {
             bindings = <
-&trans  &trans        &trans        &trans         &trans            &trans                       &trans     &trans  &trans  &trans     &trans     &trans
-&trans  &kp ESCAPE    &kp PG_UP     &arr_up_mm     &kp PAGE_DOWN     &trans                       &kp STAR   &kp N7  &kp N8  &kp N9     &kp MINUS  &trans
-&trans  &kp HOME      &arr_left_mm  &arr_down_mm   &arr_right_mm     &kp END                      &kp SLASH  &kp N4  &kp N5  &kp N6     &kp PLUS   &trans
-&trans  &kp LC(HOME)  &kp PG_UP     &kp PAGE_DOWN  &kp LG(LC(LEFT))  &kp LC(LG(RIGHT_ARROW))      &kp EQUAL  &kp N1  &kp N2  &kp N3     &kp N0     &trans
-&trans  &trans        &trans        &trans         &trans                                                    &trans  &trans  &kp MINUS  &kp N0     &kp PERIOD
+&trans  &trans      &trans        &trans        &trans         &trans         &trans     &trans  &trans  &trans     &trans     &trans
+&trans  &kp ESCAPE  &kp PG_UP     &arr_up_mm    &kp PAGE_DOWN  &trans         &kp STAR   &kp N7  &kp N8  &kp N9     &kp MINUS  &trans
+&trans  &kp HOME    &arr_left_mm  &arr_down_mm  &arr_right_mm  &kp END        &kp SLASH  &kp N4  &kp N5  &kp N6     &kp PLUS   &trans
+&trans  &kp LC(Z)   &kp LC(X)     &kp LC(C)     &kp LC(V)      &kp LC(Y)      &kp EQUAL  &kp N1  &kp N2  &kp N3     &kp N0     &trans
+&trans  &trans      &trans        &trans        &trans                                   &trans  &trans  &kp MINUS  &kp N0     &kp PERIOD
             >;
         };
 
@@ -576,11 +524,11 @@
 
         symbol {
             bindings = <
-&trans  &trans      &trans     &trans         &trans            &trans                       &trans     &trans      &trans      &trans         &trans      &trans
-&trans  &kp ESCAPE  &kp PG_UP  &kp UP_ARROW   &kp PAGE_DOWN     &trans                       &kp STAR   &kp LS(N7)  &kp LS(N8)  &kp LS(N9)     &kp MINUS   &trans
-&trans  &kp HOME    &kp LEFT   &kp DOWN       &kp RIGHT_ARROW   &kp END                      &kp SLASH  &kp LS(N4)  &kp LS(N5)  &kp LS(N6)     &kp PLUS    &trans
-&trans  &kp ESCAPE  &kp PG_UP  &kp PAGE_DOWN  &kp LG(LC(LEFT))  &kp LC(LG(RIGHT_ARROW))      &kp EQUAL  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)     &kp LS(N0)  &trans
-&trans  &trans      &trans     &trans         &trans                                                    &trans      &trans      &kp LS(MINUS)  &kp LS(N9)  &kp LS(N0)
+&trans  &trans      &trans     &trans        &trans           &trans         &trans     &trans      &trans      &trans         &trans      &trans
+&trans  &kp ESCAPE  &kp PG_UP  &kp UP_ARROW  &kp PAGE_DOWN    &trans         &kp STAR   &kp LS(N7)  &kp LS(N8)  &kp LS(N9)     &kp MINUS   &trans
+&trans  &kp HOME    &kp LEFT   &kp DOWN      &kp RIGHT_ARROW  &kp END        &kp SLASH  &kp LS(N4)  &kp LS(N5)  &kp LS(N6)     &kp PLUS    &trans
+&trans  &kp LC(Z)   &kp LC(X)  &kp LC(C)     &kp LC(V)        &kp LC(Y)      &kp EQUAL  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)     &kp LS(N0)  &trans
+&trans  &trans      &trans     &trans        &trans                                     &trans      &trans      &kp LS(MINUS)  &kp LS(N9)  &kp LS(N0)
             >;
         };
 

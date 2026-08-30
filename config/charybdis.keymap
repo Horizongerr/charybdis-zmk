@@ -93,6 +93,21 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+        cm_lbrc: cm_lbrc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>, <&kp LBRC>; // Normal: [, Com Shift: {
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        cm_rbrc: cm_rbrc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RBKT>, <&kp RBRC>; // Normal: ], Com Shift: }
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+};
         // ── Arrow cluster hold-taps (urob style) ─────────────────
         // tap=arrow, hold=home/end/pgup/pgdn
 
@@ -321,25 +336,22 @@
             timeout-ms = <40>;
             require-prior-idle-ms = <125>;
         };
-
-        // ── Urob horizontais direita ──────────────────────────────
+        // NOVOS COMBOS adicionados aqui chamando os comportamentos acima:
+        combo_lbrc {
+            bindings = <&cm_lbrc>;
+            key-positions = <43 44>; // Ajuste para as posições físicas que preferir
+            timeout-ms = <40>;
+            require-prior-idle-ms = <125>;
+        };
 
         combo_rbrc {
-            bindings = <&kp RBRC>;
-            key-positions = <44 45>;
+            bindings = <&cm_rbrc>;
+            key-positions = <44 45>; // Ajuste para as posições físicas que preferir
             timeout-ms = <40>;
-            layers = <NAV>;
             require-prior-idle-ms = <125>;
         };
-
-        combo_lbrc {
-            bindings = <&kp LBRC>;
-            key-positions = <43 44>;
-            timeout-ms = <40>;
-            layers = <NAV>;
-            require-prior-idle-ms = <125>;
-        };
-
+    }; // Fim do bloco combos
+};
         // ── Urob verticais esquerda ───────────────────────────────
 
         combo_at {

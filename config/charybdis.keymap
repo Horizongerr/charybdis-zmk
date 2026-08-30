@@ -106,8 +106,7 @@
             bindings = <&kp RBKT>, <&kp RBRC>; // Normal: ], Com Shift: }
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-    };
-};
+
         // ── Arrow cluster hold-taps (urob style) ─────────────────
         // tap=arrow, hold=home/end/pgup/pgdn
 
@@ -336,7 +335,7 @@
             timeout-ms = <40>;
             require-prior-idle-ms = <125>;
         };
-        // NOVOS COMBOS adicionados aqui chamando os comportamentos acima:
+
         combo_lbrc {
             bindings = <&cm_lbrc>;
             key-positions = <43 44>; // Ajuste para as posições físicas que preferir
@@ -350,8 +349,7 @@
             timeout-ms = <40>;
             require-prior-idle-ms = <125>;
         };
-    }; // Fim do bloco combos
-};
+
         // ── Urob verticais esquerda ───────────────────────────────
 
         combo_at {
